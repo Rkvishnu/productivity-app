@@ -36,14 +36,14 @@ jobs:
       - name: Build Client Docker Image
         working-directory: ./client
         run: |
-          docker build -t rkvishnu77/productivity-app:clientapp-latest .
+          docker build -t rkvishnu77/productivity-app:clientapp .
 
       # Build a Docker image for the server application
       - name: Build Server Docker Image
         working-directory:
           ./server
         run: |
-          docker build -t rkvishnu77/productivity-app:serverapp-latest .
+          docker build -t rkvishnu77/productivity-app:serverapp .
  
       # Log in to Docker Hub using credentials from repository secrets
       - name: Log in to Docker Hub
