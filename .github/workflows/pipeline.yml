@@ -31,20 +31,19 @@ jobs:
           npm install
           npm run test
 
-       
-
+      
       # Build a Docker image for the client application
       - name: Build Client Docker Image
         working-directory: ./client
         run: |
-          docker build -t rkvishnu77/productivity-app:clientapp-${{github.run_number}} -t rkvishnu77/productivity-app:clientapp-latest .
+          docker build -t rkvishnu77/productivity-app:clientapp-latest .
 
       # Build a Docker image for the server application
       - name: Build Server Docker Image
         working-directory:
           ./server
         run: |
-          docker build -t rkvishnu77/productivity-app:serverapp-${{github.run_number}} -t rkvishnu77/productivity-app:serverapp-latest .
+          docker build -t rkvishnu77/productivity-app:serverapp-latest .
  
       # Log in to Docker Hub using credentials from repository secrets
       - name: Log in to Docker Hub
@@ -56,8 +55,8 @@ jobs:
       # Push the Docker images to Docker Hub
       - name: Push Docker Images to Docker Hub
         run: |
-          docker push rkvishnu77/productivity-app:clienapp-${{github.run_number}}
-          docker push rkvishnu77/productivity-app:serverapp-${{github.run_number}}
+          docker push rkvishnu77/productivity-app:clienapp
+          docker push rkvishnu77/productivity-app:serverapp
           docker push rkvishnu77/productivity-app:clientapp-latest
           docker push rkvishnu77/productivity-app:serverapp-latest
 
