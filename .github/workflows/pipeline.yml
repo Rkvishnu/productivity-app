@@ -55,7 +55,7 @@ jobs:
       # Push the Docker images to Docker Hub
       - name: Push Docker Images to Docker Hub
         run: |
-          docker push rkvishnu77/productivity-app:clienapp
+          docker push rkvishnu77/productivity-app:clientapp
           docker push rkvishnu77/productivity-app:serverapp
           docker push rkvishnu77/productivity-app:clientapp-latest
           docker push rkvishnu77/productivity-app:serverapp-latest
